@@ -3,6 +3,33 @@ Grocery Assist (Hackathon Starter)
 
 [![Dependency Status](https://david-dm.org/sahat/hackathon-starter/status.svg?style=flat)](https://david-dm.org/sahat/hackathon-starter) [![devDependencies Status](https://david-dm.org/sahat/hackathon-starter/dev-status.svg)](https://david-dm.org/sahat/hackathon-starter?type=dev) [![Build Status](https://travis-ci.org/sahat/hackathon-starter.svg?branch=master)](https://travis-ci.org/sahat/hackathon-starter) [![Join the chat at https://gitter.im/sahat/hackathon-starter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sahat/hackathon-starter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+### Twilio send/receive text tutorial
+
+**Send a Text**
+
+1. Sign up for a trial twilio account here https://www.twilio.com/try-twilio
+2. Follow the prompts to create a number respective to your country
+3. Install node if not already present
+4. Run in the project space: npm install twilio
+5. Replace the authtoken, account id, and two phone numbers to your respective account
+6. Run: node send_sms.js
+7. You should receive a text
+
+**Receive a Text**
+
+1. Run in project workspace: npm install express
+2. In a another terminal run: node server.js
+3. Run in project workspace: npm install -g twilio-cli
+4. When prompted, enter id and auth token
+5. Run in project workspace: twilio phone-numbers:update "YOUR TWILIO NUMBER" --sms-url="http://localhost:1337/sms"
+6. With both server.js and twilio cli running when you send a text to your twilio number you should receive a confirmation text
+
+For more info: https://www.twilio.com/docs/sms/quickstart/node?code-sample=code-send-an-sms-using-twilio-with-nodejs&code-language=Node.js&code-sdk-version=3.x
+
+
+
+
+
 **Live Demo**: https://hackathon-starter.walcony.com
 
 Jump to [What's new?](https://github.com/sahat/hackathon-starter/blob/master/CHANGELOG.md)
