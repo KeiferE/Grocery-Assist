@@ -24,6 +24,15 @@ Grocery Assist (Hackathon Starter)
 5. Run in project workspace: twilio phone-numbers:update "YOUR TWILIO NUMBER" --sms-url="http://localhost:1337/sms"
 6. With both server.js and twilio cli running when you send a text to your twilio number you should receive a confirmation text
 
+### To call and transcribe an incoming call
+
+1. In a terminal run: node inbound_call.js
+2. In another terminal run: ./ngrok http PORT#
+3. Take the public webhook produced by ngrok and add it to your voice webhook for the number in the twilio console. Add "/record" to the end
+4. Call your created numbers, after the voice message, record your message and hang up
+5. To view your new voice message and the transcribing go to call logs and the transcribe logs in the twilio console
+
+
 For more info: https://www.twilio.com/docs/sms/quickstart/node?code-sample=code-send-an-sms-using-twilio-with-nodejs&code-language=Node.js&code-sdk-version=3.x
 
 
